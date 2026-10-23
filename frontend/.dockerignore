@@ -1,0 +1,16 @@
+# Frontend .dockerignore
+node_modules
+dist
+build
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+.DS_Store
+.git
+.gitignore
+*.tgz
+coverage
+.nyc_output
+.vite

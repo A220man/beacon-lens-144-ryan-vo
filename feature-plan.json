@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "current_feature": "skeleton-fastapi-react",
+  "features": [
+    {
+      "id": "skeleton-fastapi-react",
+      "title": "FastAPI + React skeleton with Docker Compose",
+      "status": "done",
+      "acceptance": [
+        "FastAPI app runs at /health endpoint",
+        "React + TypeScript + Vite frontend builds and serves",
+        "Docker Compose brings up backend, frontend, PostgreSQL, Keycloak",
+        "Backend tests pass (pytest)",
+        "Frontend typecheck and build pass",
+        "README with install/run/test steps"
+      ],
+      "implementation": [
+        "backend/app/main.py",
+        "backend/requirements.txt",
+        "backend/Dockerfile",
+        "backend/pyproject.toml",
+        "backend/tests/test_health.py",
+        "frontend/package.json",
+        "frontend/src/main.tsx",
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/vite.config.ts",
+        "frontend/tsconfig.json",
+        "frontend/tsconfig.node.json",
+        "frontend/vitest.config.ts",
+        "frontend/tests/setup.ts",
+        "frontend/tests/App.test.tsx",
+        "frontend/Dockerfile",
+        "frontend/nginx.conf",
+        "docker-compose.yaml",
+        ".env.example",
+        "README.md",
+        "CHANGELOG.md",
+        "LICENSE",
+        "portfolio.json",
+        ".gitignore"
+      ],
+      "tests": [
+        "backend/tests/test_health.py",
+        "frontend/tests/App.test.tsx"
+      ]
+    },
+    {
+      "id": "rag-core",
+      "title": "RAG core: document upload, chunking, embedding, vector search",
+      "status": "planned",
+      "acceptance": [
+        "Upload PDF/text documents via API",
+        "Documents chunked with configurable size/overlap",
+        "Chunks embedded and stored in pgvector",
+        "Semantic search returns relevant chunks",
+        "Tests cover upload, chunking, embedding, search"
+      ],
+      "implementation": [],
+      "tests": []
+    },
+    {
+      "id": "wiki-generation",
+      "title": "Wiki generation: extract, summarize, classify, reduce",
+      "status": "planned",
+      "acceptance": [
+        "Per-document map phase produces slugs, summaries, classifications",
+        "Cross-document reduce phase merges into wiki pages",
+        "Wiki pages queryable via API",
+        "Content-addressable caching for map phase"
+      ],
+      "implementation": [],
+      "tests": []
+    },
+    {
+      "id": "agent-reasoning",
+      "title": "Autonomous reasoning agent with tool use",
+      "status": "planned",
+      "acceptance": [
+        "Agent answers questions using RAG + wiki tools",
+        "Multi-step reasoning with tool calls",
+        "Citations link back to source chunks",
+        "Streaming responses"
+      ],
+      "implementation": [],
+      "tests": []
+    },
+    {
+      "id": "auth-oidc",
+      "title": "OIDC authentication with Keycloak",
+      "status": "planned",
+      "acceptance": [
+        "Login via Keycloak authorization code flow",
+        "HttpOnly cookies with CSRF protection",
+        "Role-based access (viewer/operator/admin)",
+        "Protected API endpoints"
+      ],
+      "implementation": [],
+      "tests": []
+    },
+    {
+      "id": "content-cache",
+      "title": "Content-addressable caching for reprocessing (Issue #1679)",
+      "status": "planned",
+      "acceptance": [
+        "Stable chunk IDs from content hash",
+        "VLM OCR/Caption cached by image hash + model + prompt version",
+        "Embedding cached by normalized text + model",
+        "Wiki map cached by normalized content + config",
+        "Reprocessing unchanged content hits cache ~100%"
+      ],
+      "implementation": [],
+      "tests": []
+    }
+  ]
+}
