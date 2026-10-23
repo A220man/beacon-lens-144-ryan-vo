@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "beacon-lens-144-ryan-vo",
+  "owner": "A220man",
+  "email": "ryandtvo@gmail.com",
+  "domain": "AI/ML developer tools",
+  "summary": "Work in progress: beacon-lens-144-ryan-vo",
+  "workflows": [
+    "Document ingestion \u2192 chunking \u2192 embedding \u2192 semantic search with pgvector",
+    "Per-document map (extract, summarize, classify) \u2192 cross-document reduce (merge, deduplicate) wiki generation",
+    "Autonomous reasoning agent with tool use for multi-step question answering with citations"
+  ],
+  "auth": "oidc-keycloak-saml-broker",
+  "llm_providers": [
+    "openai-compatible",
+    "anthropic",
+    "gemini",
+    "ollama"
+  ],
+  "status": "work-in-progress"
+}

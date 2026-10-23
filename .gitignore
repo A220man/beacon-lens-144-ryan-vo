@@ -1,0 +1,26 @@
+# Root .gitignore
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+*.log
+.pytest_cache/
+.coverage
+*.egg-info/
+build/
+dist/
+.antigravitycli/
+.omp/
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
