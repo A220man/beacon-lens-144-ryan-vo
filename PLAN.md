@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-skeleton-fastapi-react
+rag-core
 
 ## Roadmap
 
@@ -26,7 +26,7 @@ Tests: `backend/tests/test_health.py`, `frontend/tests/App.test.tsx`
 
 ### rag-core — RAG core: document upload, chunking, embedding, vector search
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - Upload PDF/text documents via API

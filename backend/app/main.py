@@ -1,14 +1,27 @@
+
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Optional
 import os
+
+from .database import init_db, close_db
+from .api.v1 import documents
 
 
 class HealthResponse(BaseModel):
     status: str = "ok"
     version: str = "1.0.0"
     service: str = "beacon-lens"
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    await init_db()
+    yield
+    # Shutdown
+    await close_db()
 
 
 def create_app() -> FastAPI:
@@ -18,7 +31,11 @@ def create_app() -> FastAPI:
         version="1.0.0",
         docs_url="/docs",
         redoc_url="/redoc",
+        lifespan=lifespan,
     )
+
+    # Include routers
+    app.include_router(documents.router, prefix="/api/v1")
 
     # CORS for frontend
     app.add_middleware(
