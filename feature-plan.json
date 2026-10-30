@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "skeleton-fastapi-react",
+  "current_feature": "rag-core",
   "features": [
     {
       "id": "skeleton-fastapi-react",
@@ -48,7 +48,7 @@
     {
       "id": "rag-core",
       "title": "RAG core: document upload, chunking, embedding, vector search",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "Upload PDF/text documents via API",
         "Documents chunked with configurable size/overlap",

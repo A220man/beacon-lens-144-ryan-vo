@@ -2,7 +2,11 @@
   "name": "beacon-lens-frontend",
   "version": "1.0.0",
   "description": "Beacon Lens Frontend - AI Knowledge Platform UI",
-  "author": "Ryan Vo <ryandtvo@gmail.com>",
+  "author": {
+    "name": "Ryan Vo",
+    "email": "ryandtvo@gmail.com",
+    "url": "https://github.com/A220man"
+  },
   "license": "MIT",
   "type": "module",
   "scripts": {
