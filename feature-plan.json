@@ -48,7 +48,7 @@
     {
       "id": "rag-core",
       "title": "RAG core: document upload, chunking, embedding, vector search",
-      "status": "in_progress",
+      "status": "done",
       "acceptance": [
         "Upload PDF/text documents via API",
         "Documents chunked with configurable size/overlap",
@@ -56,8 +56,22 @@
         "Semantic search returns relevant chunks",
         "Tests cover upload, chunking, embedding, search"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "backend/app/chunking.py",
+        "backend/app/embeddings.py",
+        "backend/app/models.py",
+        "backend/app/services/document_service.py",
+        "backend/app/api/v1/documents.py",
+        "backend/app/database.py",
+        "backend/tests/test_chunking.py",
+        "backend/tests/test_document_service.py",
+        "backend/tests/test_api_documents.py"
+      ],
+      "tests": [
+        "backend/tests/test_chunking.py",
+        "backend/tests/test_document_service.py",
+        "backend/tests/test_api_documents.py"
+      ]
     },
     {
       "id": "wiki-generation",

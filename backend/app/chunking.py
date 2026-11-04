@@ -41,11 +41,11 @@ def chunk_text(
 
         # Try to break at sentence boundary
         if end < text_len:
-            # Look for sentence ending within the last 20% of the chunk
-            search_start = max(start, end - char_size // 5)
+            # Look for sentence ending within the chunk (from start to end)
+            # Find the last sentence boundary before end
             sentence_end = -1
-            for m in re.finditer(r"[.!?]\s+", text[search_start:end]):
-                sentence_end = m.end() + search_start
+            for m in re.finditer(r"[.!?]\s+", text[start:end]):
+                sentence_end = m.end() + start
             if sentence_end > start:
                 end = sentence_end
 
