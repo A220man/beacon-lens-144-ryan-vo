@@ -26,7 +26,7 @@ Tests: `backend/tests/test_health.py`, `frontend/tests/App.test.tsx`
 
 ### rag-core — RAG core: document upload, chunking, embedding, vector search
 
-Status: in_progress
+Status: done
 
 Acceptance:
 - Upload PDF/text documents via API
@@ -34,6 +34,10 @@ Acceptance:
 - Chunks embedded and stored in pgvector
 - Semantic search returns relevant chunks
 - Tests cover upload, chunking, embedding, search
+
+Implementation: `backend/app/chunking.py`, `backend/app/embeddings.py`, `backend/app/models.py`, `backend/app/services/document_service.py`, `backend/app/api/v1/documents.py`, `backend/app/database.py`, `backend/tests/test_chunking.py`, `backend/tests/test_document_service.py`, `backend/tests/test_api_documents.py`
+
+Tests: `backend/tests/test_chunking.py`, `backend/tests/test_document_service.py`, `backend/tests/test_api_documents.py`
 
 ### wiki-generation — Wiki generation: extract, summarize, classify, reduce
 
