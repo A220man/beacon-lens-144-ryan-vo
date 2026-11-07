@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-rag-core
+wiki-generation
 
 ## Roadmap
 
@@ -41,13 +41,17 @@ Tests: `backend/tests/test_chunking.py`, `backend/tests/test_document_service.py
 
 ### wiki-generation — Wiki generation: extract, summarize, classify, reduce
 
-Status: planned
+Status: done
 
 Acceptance:
 - Per-document map phase produces slugs, summaries, classifications
 - Cross-document reduce phase merges into wiki pages
 - Wiki pages queryable via API
 - Content-addressable caching for map phase
+
+Implementation: `backend/app/models.py`, `backend/app/services/wiki_service.py`, `backend/app/api/v1/wiki.py`, `backend/app/api/v1/__init__.py`, `backend/app/main.py`, `backend/tests/test_wiki_service.py`, `backend/tests/test_api_wiki.py`
+
+Tests: `backend/tests/test_wiki_service.py`, `backend/tests/test_api_wiki.py`
 
 ### agent-reasoning — Autonomous reasoning agent with tool use
 

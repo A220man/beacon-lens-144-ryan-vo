@@ -6,7 +6,7 @@ from pydantic import BaseModel
 import os
 
 from .database import init_db, close_db
-from .api.v1 import documents
+from .api.v1 import documents, wiki
 
 
 class HealthResponse(BaseModel):
@@ -36,6 +36,7 @@ def create_app() -> FastAPI:
 
     # Include routers
     app.include_router(documents.router, prefix="/api/v1")
+    app.include_router(wiki.router, prefix="/api/v1")
 
     # CORS for frontend
     app.add_middleware(
