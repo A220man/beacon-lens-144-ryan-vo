@@ -1,5 +1,4 @@
-
 """API v1 routes."""
-from . import documents
+from . import documents, wiki
 
-__all__ = ["documents"]
+__all__ = ["documents", "wiki"]

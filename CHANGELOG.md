@@ -1,9 +1,29 @@
 # Changelog
 
-## 1.2.0 — work-in-progress checkpoint
+## 1.3.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
 
+## 1.3.0 — 2026-11-07
+
+### Added
+- Wiki generation feature with map/reduce pipeline
+- WikiPage and WikiSection SQLAlchemy models with pgvector-ready schema
+- MapCache model for content-addressable caching of map phase results
+- WikiService with map phase (slug extraction, summarization, classification) and reduce phase (section merging)
+- Content-addressable caching using SHA256 content hashes for map phase reprocessing avoidance
+- REST API endpoints: POST /api/v1/wiki/generate, GET /api/v1/wiki, GET /api/v1/wiki/search, GET /api/v1/wiki/{id}, GET /api/v1/wiki/slug/{slug}, DELETE /api/v1/wiki/{id}
+- Unit tests for wiki service (normalization, hashing, slug extraction, classification, cache behavior)
+- API tests for wiki endpoints (validation, listing, search)
+
+### Changed
+- Updated PLAN.md and feature-plan.json to mark wiki-generation as complete
+- Extended backend models with wiki-related tables
+
+### Infrastructure
+- Database schema migration for wiki_pages, wiki_sections, map_cache tables
+
+## 1.2.0 — work-in-progress checkpoint
 ## 1.1.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.

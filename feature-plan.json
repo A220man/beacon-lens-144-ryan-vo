@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "rag-core",
+  "current_feature": "wiki-generation",
   "features": [
     {
       "id": "skeleton-fastapi-react",
@@ -76,15 +76,26 @@
     {
       "id": "wiki-generation",
       "title": "Wiki generation: extract, summarize, classify, reduce",
-      "status": "planned",
+      "status": "done",
       "acceptance": [
         "Per-document map phase produces slugs, summaries, classifications",
         "Cross-document reduce phase merges into wiki pages",
         "Wiki pages queryable via API",
         "Content-addressable caching for map phase"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "backend/app/models.py",
+        "backend/app/services/wiki_service.py",
+        "backend/app/api/v1/wiki.py",
+        "backend/app/api/v1/__init__.py",
+        "backend/app/main.py",
+        "backend/tests/test_wiki_service.py",
+        "backend/tests/test_api_wiki.py"
+      ],
+      "tests": [
+        "backend/tests/test_wiki_service.py",
+        "backend/tests/test_api_wiki.py"
+      ]
     },
     {
       "id": "agent-reasoning",
