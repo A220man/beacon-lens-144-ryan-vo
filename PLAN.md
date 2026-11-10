@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-wiki-generation
+wiki-generation-improvements
 
 ## Roadmap
 
@@ -52,6 +52,20 @@ Acceptance:
 Implementation: `backend/app/models.py`, `backend/app/services/wiki_service.py`, `backend/app/api/v1/wiki.py`, `backend/app/api/v1/__init__.py`, `backend/app/main.py`, `backend/tests/test_wiki_service.py`, `backend/tests/test_api_wiki.py`
 
 Tests: `backend/tests/test_wiki_service.py`, `backend/tests/test_api_wiki.py`
+
+### wiki-generation-improvements — Wiki generation multi-document fixes
+
+Status: done
+
+Acceptance:
+- Wiki title combines multiple document titles instead of using only the first
+- Slug collision handling for duplicate base slugs
+- Wiki summary combines summaries from all source documents
+- Tests cover multi-document behavior
+
+Implementation: `backend/app/services/wiki_service.py`, `backend/tests/test_wiki_service.py`
+
+Tests: `backend/tests/test_wiki_service.py::TestWikiServiceMultiDoc`
 
 ### agent-reasoning — Autonomous reasoning agent with tool use
 

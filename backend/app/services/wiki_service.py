@@ -180,9 +180,18 @@ class WikiService:
         if len(wiki_summary) > 500:
             wiki_summary = wiki_summary[:500].rsplit(" ", 1)[0] + "..."
 
+        # Generate combined title from all document titles
+        if len(map_results) == 1:
+            wiki_title = map_results[0]["title"]
+        else:
+            titles = [mr["title"] for mr in map_results]
+            wiki_title = " + ".join(titles)
+            if len(wiki_title) > 200:
+                wiki_title = wiki_title[:197] + "..."
+
         wiki_page = WikiPage(
             slug=slug,
-            title=map_results[0]["title"],
+            title=wiki_title,
             content=full_content,
             summary=wiki_summary,
             source_document_ids=source_doc_ids,

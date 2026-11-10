@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "wiki-generation",
+  "current_feature": "wiki-generation-improvements",
   "features": [
     {
       "id": "skeleton-fastapi-react",
@@ -98,6 +98,24 @@
       ]
     },
     {
+      "id": "wiki-generation-improvements",
+      "title": "Wiki generation multi-document fixes",
+      "status": "done",
+      "acceptance": [
+        "Wiki title combines multiple document titles instead of using only the first",
+        "Slug collision handling for duplicate base slugs",
+        "Wiki summary combines summaries from all source documents",
+        "Tests cover multi-document behavior"
+      ],
+      "implementation": [
+        "backend/app/services/wiki_service.py",
+        "backend/tests/test_wiki_service.py"
+      ],
+      "tests": [
+        "backend/tests/test_wiki_service.py::TestWikiServiceMultiDoc"
+      ]
+    },
+    {
       "id": "agent-reasoning",
       "title": "Autonomous reasoning agent with tool use",
       "status": "planned",
@@ -139,3 +157,4 @@
     }
   ]
 }
+
