@@ -1,9 +1,23 @@
 # Changelog
 
+## 1.4.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.3.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
 
+## 1.3.1 — 2026-11-10
+
+### Fixed
+- Wiki generation title now combines multiple document titles instead of using only the first document's title
+- Improved slug collision handling in wiki generation
+- Wiki summary now combines summaries from all source documents
+
+### Added
+- Multi-document wiki generation tests (TestWikiServiceMultiDoc)
+- Test coverage for combined title, slug collision, and combined summary behavior
 ## 1.3.0 — 2026-11-07
 
 ### Added
