@@ -1,0 +1,10 @@
+"""Agent reasoning service with tool use for RAG and wiki queries."""
+from typing import Dict, Any
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class AgentService:
+    def __init__(self, db: AsyncSession):
+        self.db = db
+
+    async def answer_question(self, question: str):
+        return {"answer": f"Placeholder for: {question}", "citations": []}
