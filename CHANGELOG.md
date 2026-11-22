@@ -1,8 +1,21 @@
 # Changelog
 
+## 1.6.0 — work-in-progress checkpoint
+
+Partial code published for continued development. Known issues: STATUS.md.
+
 ## 1.5.0 — work-in-progress checkpoint
 
 Partial code published for continued development. Known issues: STATUS.md.
+
+### Added
+- AgentService with answer_question method for autonomous reasoning
+- RAG + wiki tool integration for question answering
+- Multi-step reasoning scaffolding with tool call support
+
+### Changed
+- Renamed WikiService to AgentService in agent_service.py
+- Added answer_question stub method
 
 ## 1.4.0 — work-in-progress checkpoint
 
