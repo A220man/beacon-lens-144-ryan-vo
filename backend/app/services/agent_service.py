@@ -10,12 +10,19 @@ from ..embeddings import get_embedding_service
 from ..chunking import chunk_text
 
 
-class WikiService:
+class AgentService:
     """Service for wiki generation using map/reduce pipeline."""
 
     def __init__(self, db: AsyncSession):
         self.db = db
         self.embedding_service = get_embedding_service()
+
+    async def answer_question(self, question: str) -> str:
+        """Answer a question using RAG + wiki tools."""
+        # TODO: Implement RAG pipeline with tool calls
+        return f"Answer to: {question}"
+
+
 
     def _normalize_content(self, content: str) -> str:
         """Normalize content for consistent hashing."""
