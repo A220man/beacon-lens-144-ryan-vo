@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "wiki-generation-improvements",
+  "current_feature": "agent-reasoning",
   "features": [
     {
       "id": "skeleton-fastapi-react",
@@ -118,15 +118,20 @@
     {
       "id": "agent-reasoning",
       "title": "Autonomous reasoning agent with tool use",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "Agent answers questions using RAG + wiki tools",
         "Multi-step reasoning with tool calls",
         "Citations link back to source chunks",
         "Streaming responses"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "backend/app/services/agent_service.py:answer_question method"
+      ],
+      "tests": [
+        "backend/tests/test_agent_service.py::test_agent_service_instantiation",
+        "backend/tests/test_agent_service.py::test_answer_question_with_rag"
+      ]
     },
     {
       "id": "auth-oidc",
@@ -157,4 +162,3 @@
     }
   ]
 }
-

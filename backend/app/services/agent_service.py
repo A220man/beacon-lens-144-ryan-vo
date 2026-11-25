@@ -18,9 +18,43 @@ class AgentService:
         self.embedding_service = get_embedding_service()
 
     async def answer_question(self, question: str) -> str:
-        """Answer a question using RAG + wiki tools."""
-        # TODO: Implement RAG pipeline with tool calls
-        return f"Answer to: {question}"
+        """Answer a question using RAG + wiki tools with citations."""
+        # Step 1: Search for relevant chunks
+        chunks = await self._search_chunks(question, limit=5)
+        
+        if not chunks:
+            return f"No relevant information found for: {question}"
+        
+        # Step 2: Build answer from chunk content with citations
+        answer_parts = []
+        citations = []
+        
+        for i, chunk in enumerate(chunks):
+            source_id = str(chunk.document_id)
+            content_preview = chunk.content[:200] + "..." if len(chunk.content) > 200 else chunk.content
+            answer_parts.append(f"[{i+1}] {content_preview}")
+            citations.append({
+                "source": source_id,
+                "preview": content_preview,
+            })
+        
+        answer = " ".join(answer_parts)
+        
+        # Step 3: Format citations
+        citation_lines = []
+        for j, cit in enumerate(citations):
+            citation_lines.append(f"[{j+1}] Source {cit['source']}: {cit['preview']}")
+        
+        return f"{answer}\n\nReferences:\n" + "\n".join(citation_lines)
+
+    async def _search_chunks(self, question: str, limit: int = 5) -> List[Chunk]:
+        """Search for chunks relevant to the question."""
+        from ..services.document_service import DocumentService
+        
+        if self.document_service is None:
+            self.document_service = DocumentService(self.db)
+        
+        return await self.document_service.search(query=question, limit=limit)
 
 
 
