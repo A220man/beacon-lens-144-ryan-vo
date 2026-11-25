@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-wiki-generation-improvements
+agent-reasoning
 
 ## Roadmap
 
@@ -69,13 +69,17 @@ Tests: `backend/tests/test_wiki_service.py::TestWikiServiceMultiDoc`
 
 ### agent-reasoning — Autonomous reasoning agent with tool use
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - Agent answers questions using RAG + wiki tools
 - Multi-step reasoning with tool calls
 - Citations link back to source chunks
 - Streaming responses
+
+Implementation: `backend/app/services/agent_service.py:answer_question method`
+
+Tests: `backend/tests/test_agent_service.py::test_agent_service_instantiation`, `backend/tests/test_agent_service.py::test_answer_question_with_rag`
 
 ### auth-oidc — OIDC authentication with Keycloak
 
